@@ -1,6 +1,19 @@
+require_relative 'config/environment'
 desc 'outputs hello to the terminal'
 task :hello do
   puts "hello from Rake!"
+end
+
+namespace :greeting do
+desc 'outputs hello to the terminal'
+  task :hello do
+    puts "hello from Rake!"
+  end
+ 
+  desc 'outputs hola to the terminal'
+  task :hola do
+    puts "hola de Rake!"
+  end
 end
 
 task :environment do
@@ -22,6 +35,6 @@ namespace :db do
 end
 
 desc 'drop into the Pry console'
-task :console => :environment do
+task :console  do
   Pry.start
 end
